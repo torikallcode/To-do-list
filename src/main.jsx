@@ -1,20 +1,24 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { TodoWrapper } from './components/Elements/TodoWrapper'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import './index.css';
+import { TodoWrapper } from './components/Elements/TodoWrapper';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div className='flex justify-center  pt-32 w-full min-h-screen bg-slate-700'>
+function App() {
+  return (
+    <div className='flex justify-center pt-32 w-full min-h-screen bg-slate-700'>
       <TodoWrapper />
     </div>
-  }
-])
+  );
+}
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+      </Routes>
+    </HashRouter>
   </React.StrictMode>,
-)
+  document.getElementById('root')
+);
