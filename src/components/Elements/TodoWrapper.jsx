@@ -50,7 +50,7 @@ export const TodoWrapper = () => {
 
     return (
         <div className="bg-slate-800 h-full w-full max-w-[22rem] p-11 rounded-lg">
-            <h1 className="font-semibold text-white text-center mb-5 text-xl"> Ayo tulis todolistmu</h1>
+            <h1 className="font-semibold text-white text-center mb-5 text-xl">Your todoList</h1>
             <TodoForm addTodo={addTodo} />
             {todos.map((todo, index) =>
                 todo.isEditing ? (
