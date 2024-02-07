@@ -1,24 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import { TodoWrapper } from './components/Elements/TodoWrapper';
 
-function App() {
+const App = () => {
   return (
-    <div className='flex justify-center pt-32 w-full min-h-screen bg-slate-700'>
+    <div className="flex justify-center pt-32 w-full min-h-screen bg-slate-700">
       <TodoWrapper />
     </div>
   );
-}
+};
 
-ReactDOM.render(
-  <React.StrictMode>
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-      </Routes>
-    </HashRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <HashRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+    </Routes>
+  </HashRouter>,
 );
